@@ -1,0 +1,21 @@
+@* Displays all posts *@
+@(postSeq : Seq[models.Post])(implicit flash: Flash)
+
+@fragments.main("Posts") {
+
+   @flash.get("success").map { message => 
+   <p class="success">
+        @message
+   </p>
+   }
+
+   @*<a href="@routes.PostController.addView">Add a post!</a>*@
+   <button onClick="addPost()">Add Post</button>
+   
+   <div class="postSeq">
+   @postSeq.map { p =>
+    <p>
+    @fragments.singlePost(p)
+   }
+   </div>
+}

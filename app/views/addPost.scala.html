@@ -1,0 +1,15 @@
+@(form: Form[Post])(implicit flash: Flash)
+
+@fragments.main("Add a post") {
+    @helper.form(routes.PostController.add) {
+    
+	    <h1>Add a Post</h1>
+
+	    @helper.inputText(form("title"), '_label -> "Title", '_showConstraints -> false)
+	    @helper.textarea(form("content"), '_label -> "Content", '_showConstraints -> false)
+	    <p>
+	        <button class="submitbutton" type="submit">Add a Post</button>
+	    </p>
+	    
+    }
+}

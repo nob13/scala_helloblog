@@ -1,0 +1,17 @@
+@(post : Post)(implicit flash: Flash)
+
+<div class="post" id="post_@post.id">
+    <div class="post_title">
+        <emp>@post.title</emp>
+        <span class="post_buttons">
+        <button onclick="editPost(@post.id)">Edit</button> 
+        <button onClick="deletePost(@post.id)">Delete</button>
+    </div>
+        <div class="post_content">
+            @*<p>@post.content</p>*@
+            @Html(post.contentAsHtml)
+        </div>
+        <div class="post_timetag">
+            Posted on @post.date
+         </div>
+</div>

@@ -1,0 +1,16 @@
+@(id : Long, form: Form[Post])(implicit flash: Flash)
+
+@fragments.main("Edit Post") {
+    @helper.form(routes.PostController.edit(id)) {
+    
+        <h1>Edit a post</h1>
+
+        @helper.inputText(form("title"), '_label -> "Title", '_showConstraints -> false)
+        @helper.textarea(form("content"), '_label -> "Content", '_showConstraints -> false)
+        
+        <p>
+            <button class="submitbutton" type="submit">Edit it!</button>
+        </p>
+        
+    }
+}

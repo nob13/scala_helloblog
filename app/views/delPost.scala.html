@@ -1,0 +1,7 @@
+@(p : Post)(implicit flash: Flash)
+
+@fragments.main("Posts") {
+   Do you really want to delete the Post @{p.id}?
+   <a href="@routes.PostController.deleteView(p.idAsLong,true)">Yes</a>
+   <a href="@routes.PostController.posts">No</a>
+}
